@@ -12,7 +12,7 @@ p = Path('/Users/sunifu/Documents/python/crawer/chromedriver')
 # 開啟瀏覽器視窗(Chrome)
 # 方法一：執行前需開啟chromedriver.exe且與執行檔在同一個工作目錄
 url="https://www.eddiebauer.com/"
-url='https://www.eddiebauer.com/c/20059/mens-t-shirts?cm_sp=topnav_m_tops_t-shirts'
+url='https://www.eddiebauer.com/c/20151/womens-shirts?cm_sp=topnav_w_tops_shirts'
 s=Service(p)
 driver1 = webdriver.Chrome(service=s)
 actions = webdriver.ActionChains(driver1)
@@ -33,7 +33,7 @@ for botton in buttons:
     colors=colors.split(" ")[0]
     if price[-1]!=price[1]:
         price[1]=price[1][:-1]
-    datas={"name":str(title),'color':colors,"sex":"man",'feature':'tshirt',"price":price[-1],"oriprice":price[1],
+    datas={"name":str(title),'color':colors,"sex":"woman",'feature':'shirt',"price":price[-1],"oriprice":price[1],
     'imgcode':c}
     urllib.request.urlretrieve(src,f"/Users/sunifu/Documents/python/crawer/image/{c}.jpg")
     tmp=cloth(datas)

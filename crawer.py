@@ -2,24 +2,43 @@
 from selenium import webdriver
 import time
 import sys
+import requests,os
 from selenium.webdriver.chrome.service import Service
+from pathlib import Path
+from classes.cloth import cloth
+import urllib.request
+
+p = Path('/Users/sunifu/Documents/python/crawer/chromedriver')
 # 開啟瀏覽器視窗(Chrome)
 # 方法一：執行前需開啟chromedriver.exe且與執行檔在同一個工作目錄
-urls=["https://www.eddiebauer.com/",'https://jettylife.com']
-s=Service("./chromedriver")
+url="https://www.eddiebauer.com/"
+url='https://www.eddiebauer.com/c/20059/mens-t-shirts?cm_sp=topnav_m_tops_t-shirts'
+s=Service(p)
 driver1 = webdriver.Chrome(service=s)
-# driver2 = webdriver.Chrome(service=s)
-
-driver1.get(urls[0])
+actions = webdriver.ActionChains(driver1)
+driver1.get(url)
 time.sleep(10)
 
-
-# driver2.get(urls[1])
-# time.sleep(30)
-# for i in len(range(urls)):
-#     tit=drivers[i].execute_script('return document.title;')
-#     print(tit)
-#     time.sleep(3)
-buttons = driver1.find_elements("xpath",'/html/body/div[3]/div/header/div[3]/div/div/div/div[2]/ul/li')
+buttons = driver1.find_elements("class name","tile_wrapper_outer")
+with open('/Users/sunifu/Documents/python/crawer/test.csv',mode='w',encoding='big5') as f:
+    f.write("標題,圖片編號,價格低點,價格高點,顏色數,部位,性別,製造商\n")
+c=0
 for botton in buttons:
-    print(botton.accessible_name)
+    c=c+1
+    src=botton.find_element("tag name","img" ).get_attribute("src")
+    title=botton.find_element("class name","title" ).text
+    colors=botton.find_element("class name","color_label" ).text
+    price=botton.find_element("class name","visually_hidden").find_element("xpath","..").text
+    price=price.split("$")
+    colors=colors.split(" ")[0]
+    if price[-1]!=price[1]:
+        price[1]=price[1][:-1]
+    datas={"name":str(title),'color':colors,"sex":"man",'feature':'tshirt',"price":price[-1],"oriprice":price[1],
+    'imgcode':c}
+    urllib.request.urlretrieve(src,f"/Users/sunifu/Documents/python/crawer/image/{c}.jpg")
+    tmp=cloth(datas)
+    p = Path('/Users/sunifu/Documents/python/crawer/test.csv')
+    tmp.write(p)
+    
+print(c)
+driver1.close()

@@ -25,6 +25,7 @@ class cloth:
         return (self.oriprice-self.price)
     #寫入檔案
     def write(self,path:Path) -> None:
+        
         with open(str(path),mode='a+',encoding='big5') as f:
             f.write(f"\
 {self.name},\

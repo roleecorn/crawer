@@ -1,0 +1,86 @@
+{
+    "women": {
+        " Women's New Arrivals ": "https://www.eddiebauer.com/c/90094/women-women%27s-new-arrivals?",
+        " Tops ": {
+            "T-Shirts": {
+                "Casual": "https://www.eddiebauer.com/c/580019/women-tops-t-shirts-casual?",
+                "Performance": "https://www.eddiebauer.com/c/580018/women-tops-t-shirts-performance?",
+                "Thermals": "https://www.eddiebauer.com/c/480001/women-tops-t-shirts-thermals?"
+            },
+            "Shirts": {
+                "Performance": "https://www.eddiebauer.com/c/580013/women-tops-shirts-performance?",
+                "Flannel": "https://www.eddiebauer.com/c/480002/women-tops-shirts-flannel?",
+                "Casual": "https://www.eddiebauer.com/c/580014/women-tops-shirts-casual?",
+                "Wrinkle Free": "https://www.eddiebauer.com/c/530001/women-tops-shirts-wrinkle-free?"
+            },
+            "Performance Tops": "https://www.eddiebauer.com/c/260006/women-tops-performance-tops?",
+            "Tank Tops": {
+                "Casual": "https://www.eddiebauer.com/c/580022/women-tops-tank-tops-casual?",
+                "Performance": "https://www.eddiebauer.com/c/580021/women-tops-tank-tops-performance?"
+            },
+            "Fleece": "https://www.eddiebauer.com/c/520001/women-tops-fleece?",
+            "Sweatshirts & Hoodies": "https://www.eddiebauer.com/c/190002/women-tops-sweatshirts-and-hoodies?",
+            "Sweaters": "https://www.eddiebauer.com/c/190001/women-tops-sweaters?",
+            "Baselayers": "https://www.eddiebauer.com/c/580029/women-tops-baselayers?",
+            "Sleep": "https://www.eddiebauer.com/c/580030/women-tops-sleep?",
+            "Fleece2": "https://www.eddiebauer.com/c/700005/women-tops-fleece?"
+        },
+        " Outerwear ": {
+            "Jackets": "https://www.eddiebauer.com/c/20119/women-outerwear-jackets?",
+            "Rainwear": "https://www.eddiebauer.com/c/460010/women-outerwear-rainwear?",
+            "Insulated": {
+                "Down Insulated": "https://www.eddiebauer.com/c/460012/women-outerwear-insulated-down-insulated?",
+                "Synthetic Insulated": "https://www.eddiebauer.com/c/460008/women-outerwear-insulated-synthetic-insulated?"
+            },
+            "Parkas": "https://www.eddiebauer.com/c/110009/women-outerwear-parkas?",
+            "Softshell-Wind Jackets": "https://www.eddiebauer.com/c/460009/women-outerwear-softshell-wind-jackets?",
+            "Vests": "https://www.eddiebauer.com/c/20122/women-outerwear-vests?",
+            "Trenches & Coats": "https://www.eddiebauer.com/c/110010/women-outerwear-trenches-and-coats?",
+            "Hard Shells": "https://www.eddiebauer.com/c/460011/women-outerwear-hard-shells?",
+            "Pants： Rain, Snow, Ski": "https://www.eddiebauer.com/c/20120/women-outerwear-pants%3A-rain-snow-ski?",
+            "3-in-1": "https://www.eddiebauer.com/c/580024/women-outerwear-3-in-1?",
+            "Casual": "https://www.eddiebauer.com/c/580025/women-outerwear-casual?"
+        },
+        " Bottoms ": {
+            "Pants": "https://www.eddiebauer.com/c/580001/women-bottoms-pants?",
+            "Performance Pants": "https://www.eddiebauer.com/c/20124/women-bottoms-performance-pants?",
+            "Capris": "https://www.eddiebauer.com/c/180001/women-bottoms-capris?",
+            "Leggings": "https://www.eddiebauer.com/c/20128/women-bottoms-leggings?",
+            "Shorts": "https://www.eddiebauer.com/c/20109/women-bottoms-shorts?",
+            "Jeans": "https://www.eddiebauer.com/c/20127/women-bottoms-jeans?",
+            "Skirts & Skorts": "https://www.eddiebauer.com/c/20115/women-bottoms-skirts-and-skorts?",
+            "Cargo Pants": "https://www.eddiebauer.com/c/20125/women-bottoms-cargo-pants?",
+            "Baselayers": "https://www.eddiebauer.com/c/580010/women-bottoms-baselayers?"
+        },
+        " T-Shirts & Tanks ": "https://www.eddiebauer.com/c/500003/women-t-shirts-and-tanks?",
+        " Loungewear ": "https://www.eddiebauer.com/c/800000006/women-loungewear?",
+        " Fleece ": "https://www.eddiebauer.com/c/140003/women-fleece?",
+        " Sweatshirts & Hoodies ": "https://www.eddiebauer.com/c/260002/women-sweatshirts-and-hoodies?",
+        " Dresses ": "https://www.eddiebauer.com/c/20114/women-dresses?",
+        " Accessories ": "https://www.eddiebauer.com/c/20095/women-accessories?",
+        " Footwear ": "https://www.eddiebauer.com/c/20130/women-footwear?",
+        " Sleep ": "https://www.eddiebauer.com/c/20139/women-sleep?",
+        " Dresses & Skirts ": "https://www.eddiebauer.com/c/20113/women-dresses-and-skirts?",
+        " Flannel ": "https://www.eddiebauer.com/c/550006/women-flannel?",
+        " Baselayers ": "https://www.eddiebauer.com/c/20105/women-baselayers?"
+    },
+    "men": {
+        " Men's New Arrivals ": "https://www.eddiebauer.com/c/90001/men-men%27s-new-arrivals?",
+        " Tops ": "https://www.eddiebauer.com/c/20052/men-tops?",
+        " Bottoms ": "https://www.eddiebauer.com/c/20021/men-bottoms?",
+        " Fleece ": "https://www.eddiebauer.com/c/140004/men-fleece?",
+        " Outerwear ": "https://www.eddiebauer.com/c/20015/men-outerwear?",
+        " Loungewear ": "https://www.eddiebauer.com/c/800000008/men-loungewear?",
+        " Accessories ": "https://www.eddiebauer.com/c/20002/men-accessories?",
+        " Footwear ": "https://www.eddiebauer.com/c/20030/men-footwear?",
+        " Sleep ": "https://www.eddiebauer.com/c/20043/men-sleep?"
+    },
+    "kids": {
+        " Girls ": "https://www.eddiebauer.com/c/20088/kids-girls?",
+        " Boys ": "https://www.eddiebauer.com/c/20083/kids-boys?",
+        " Infant & Toddler ": "https://www.eddiebauer.com/c/690001/kids-infant-and-toddler?",
+        " Backpacks & Lunchbags ": "https://www.eddiebauer.com/c/670002/kids-backpacks-and-lunchbags?"
+    },
+    "other": "https://www.eddiebauer.com/s/outerwear?keyword=outerwear&cm_sp=topnav_o_featured_viewall"
+
+}

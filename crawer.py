@@ -11,7 +11,7 @@ import json
 myhome = Path.cwd()
 
 
-def craw(url: str, gender: str, imgfile: str, feature: str, datapath: Path):
+def craw(url: str, gender: str, imgfile: list, feature: str, datapath: Path):
     print('執行開始')
     dpath = myhome / 'chromedriver'
     # 開啟瀏覽器視窗(Chrome)
@@ -41,12 +41,21 @@ def craw(url: str, gender: str, imgfile: str, feature: str, datapath: Path):
             "price": price[-1],
             "oriprice": price[1],
             'imgcode': c}
-        imgpath = myhome / imgfile
+        ###!!!
+        imgpath = myhome / "eddiebauer"
         if not imgpath.exists():
-            print("nedug")
             Path(imgpath).mkdir(parents=True, exist_ok=True)
+        for afilename in imgfile:
+            imgpath= imgpath / afilename
+            if not imgpath.exists():
+                Path(imgpath).mkdir(parents=True, exist_ok=True)
+
+        # imgpath = myhome / imgfile
+        if not imgpath.exists():
+            Path(imgpath).mkdir(parents=True, exist_ok=True)
+        ###!!!
         urllib.request.urlretrieve(
-            src, f"/Users/sunifu/Documents/python/crawer/{imgfile}/{c}.jpg")
+            src, f"{imgpath.resolve()}/{c}.jpg")
         tmp = cloth(datas)
 
         tmp.write(datapath)
@@ -75,7 +84,12 @@ def getcates(url: str):
     driver1.close()
     return (cates)
 
-
+def splitword(tmp:list) -> list:
+    tmp=tmp[0] 
+    tmp=tmp.replace("[","").replace("\'","").replace(" ","").replace("\"","")
+    tmp=tmp.split("]")
+    tmp=tmp[:-1]
+    return tmp
 listsite = []
 def siteandtag(sites: dict):
     keys = sites.keys()
@@ -121,6 +135,13 @@ with open(site.resolve(), newline='', encoding='UTF-8') as jsonfile:
 siteandtag(sites=sites)
 a = find_path(sites)
 for asite in listsite:
-    tmp = a.the_value_path(asite)
+    imgp = a.the_value_path(asite)
+    imgp=splitword(imgp)
+    craw(
+        url=asite,gender="women",
+        imgfile=imgp,
+        feature="test",
+        datapath=datapath
+        )
 
-    print(f"{tmp},{asite}")
+    

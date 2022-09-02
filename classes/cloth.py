@@ -1,10 +1,12 @@
 from pathlib import Path
-
+from classes.big5 import big
 class cloth:
     #打包每件衣服的資料
     def __init__(self,datas:dict) -> None:
         keys=datas.keys()
-        datas["name"]=datas["name"].replace("\xae","")
+        for aletter in big:
+            datas["name"]=datas["name"].replace(aletter,"")
+        # datas["name"]=datas["name"].replace("\xae","").replace("\u2122","")
         for akey in keys:
             if "," in str(datas[akey]):
                 print(akey)

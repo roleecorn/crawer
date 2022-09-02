@@ -9,8 +9,6 @@ from classes.cloth import cloth
 import urllib.request
 import json
 myhome = Path.cwd()
-
-
 def craw(url: str, gender: str, imgfile: list, feature: str, datapath: Path):
     print('執行開始')
     dpath = myhome / 'chromedriver'
@@ -20,8 +18,35 @@ def craw(url: str, gender: str, imgfile: list, feature: str, datapath: Path):
     driver1 = webdriver.Chrome(service=s)
     driver1.get(url)
     time.sleep(10)
-    buttons = driver1.find_elements("class name", "tile_wrapper_outer")
+    
     c = 0
+    #找load more
+    try:
+        nextpage=driver1.find_element("css selector","div[style=\"text-align: center;\"]")
+    except:
+        print("nopage")
+    time.sleep(5)
+    while(True):
+        try :
+            location=nextpage.location
+            js=f"var action=document.documentElement.scrollTop={location['y']-200}" 
+            driver1.execute_script(js)   
+            print(location)
+            time.sleep(3)    
+            nextpage.click()
+            time.sleep(15)
+            try :
+                nextpage=driver1.find_element("css selector","div[style=\"text-align: center;\"]")
+            except:
+                print("nomore")
+                break
+            
+            time.sleep(3)
+        except:
+            print("nomore")
+            break
+    
+    buttons = driver1.find_elements("class name", "tile_wrapper_outer")
     for botton in buttons:
         c = c+1
         src = botton.find_element("tag name", "img").get_attribute("src")
@@ -143,5 +168,11 @@ for asite in listsite:
         feature="test",
         datapath=datapath
         )
-
+# craw(
+#     url="https://www.eddiebauer.com/c/20094/women?cm_sp=topnav_w_featured_viewall",
+#     gender="women",
+#     imgfile=["test"],
+#     feature="test",
+#     datapath=datapath
+#     )
     

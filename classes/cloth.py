@@ -1,12 +1,12 @@
 from pathlib import Path
-from classes.big5 import big
+from classes.big5 import formatbig5
 class cloth:
     #打包每件衣服的資料
     def __init__(self,datas:dict) -> None:
         keys=datas.keys()
-        for aletter in big:
-            datas["name"]=datas["name"].replace(aletter,"")
-        # datas["name"]=datas["name"].replace("\xae","").replace("\u2122","")
+        # tmp1=datas["name"].encode(encoding="big5",errors='ignore')
+        # datas["name"]=tmp1.decode(encoding="big5")
+        datas["name"]=formatbig5(datas["name"])
         for akey in keys:
             if "," in str(datas[akey]):
                 print(akey)
@@ -43,5 +43,5 @@ if __name__=="__main__":
     cdata={"name":"op","price":123,"color":'gr,een',"sex":'woman',"star":4.5,"oriprice":145}
     cloth1=cloth(cdata)
     print(cloth1.discount())
-    p = Path('/Users/sunifu/Documents/python/crawer/class/test.csv')
+    p = Path('.')
     cloth1.write(p)

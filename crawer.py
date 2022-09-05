@@ -137,13 +137,6 @@ def ignore():
 #     'gear': 'https://www.eddiebauer.com/c/20070/gear?cm_sp=topnav_g_featured_viewall',
 # }
 # allpage=[women,men,kids,other,gear]
-# craw(
-# url=url,
-# gender="woman",
-# feature="shirt",
-# imgfile="shirt",
-# datapath=datapath
-# )
 # toppage={}
 # for apage in allpage.keys():
 #     toppage[apage]=getcates(url=allpage[apage])
@@ -168,11 +161,5 @@ for asite in listsite:
         feature="test",
         datapath=datapath
         )
-# craw(
-#     url="https://www.eddiebauer.com/c/20094/women?cm_sp=topnav_w_featured_viewall",
-#     gender="women",
-#     imgfile=["test"],
-#     feature="test",
-#     datapath=datapath
-#     )
+
     

@@ -3,7 +3,7 @@ class find_path(object):
         self.target = target  # 查詢的字典/列表
 
     def find_the_value(self, target, value, path='', path_list=None):
-        '''上同，差別在於 這個是”完全匹配“'''
+        '''這個是”完全匹配“'''
         if isinstance(target, dict):
             dict1 = target.copy()
             for k, v in dict1.items():
@@ -72,9 +72,5 @@ class find_path(object):
 
 
 # a=find_path(dict1)
-# in_value_path=a.in_value_path('基礎傷害') #包含匹配，只要dict/list的元素中包含這個str，就能得到對應的path
 # the_value_path=a.the_value_path('40')   #完全匹配，只要dict/list的元素中就是這個 str，就能得到對應的path
-# the_key_path=a.the_key_path('description')#只搜索dict的key，相同的就會得到對應的path
-# print(in_value_path)
-# print(the_key_path)
 # print(the_value_path)

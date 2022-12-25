@@ -1,7 +1,7 @@
 
 from classes.findpath import find_path
 from selenium import webdriver
-import time
+import time,sys
 from bs4 import BeautifulSoup
 from selenium.webdriver.chrome.service import Service
 from pathlib import Path
@@ -14,8 +14,11 @@ def craw(url: str, gender: str, imgfile: list, feature: str, datapath: Path):
     dpath = myhome / 'chromedriver'
     # 開啟瀏覽器視窗(Chrome)
     # 方法一：執行前需開啟chromedriver.exe且與執行檔在同一個工作目錄
-    s = Service(dpath.resolve())
-    driver1 = webdriver.Chrome(service=s)
+    options = webdriver.ChromeOptions()
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    s = Service(executable_path=dpath.resolve())
+    driver1 = webdriver.Chrome(service=s,options=options)
+    print(url)
     driver1.get(url)
     time.sleep(10)
     
@@ -79,17 +82,20 @@ def craw(url: str, gender: str, imgfile: list, feature: str, datapath: Path):
         if not imgpath.exists():
             Path(imgpath).mkdir(parents=True, exist_ok=True)
         ###!!!
-        urllib.request.urlretrieve(
-            src, f"{imgpath.resolve()}/{c}.jpg")
-        tmp = cloth(datas)
+        try:
+            urllib.request.urlretrieve(
+                src, f"{imgpath.resolve()}/{c}.jpg")
+            tmp = cloth(datas)
 
-        tmp.write(datapath)
+            tmp.write(datapath)
+        except:
+            print(f"error at {imgpath}")
 
     driver1.close()
 
 #用來找一個網頁的子分頁
 def getcates(url: str):
-    dpath = myhome / 'chromedriver'
+    dpath = myhome / 'chromedriver.exe'
     # 開啟瀏覽器視窗(Chrome)
     # 方法一：執行前需開啟chromedriver.exe且與執行檔在同一個工作目錄
     s = Service(dpath.resolve())
@@ -155,11 +161,17 @@ a = find_path(sites)
 for asite in listsite:
     imgp = a.the_value_path(asite)
     imgp=splitword(imgp)
-    craw(
-        url=asite,gender="women",
-        imgfile=imgp,
-        feature="test",
-        datapath=datapath
-        )
+    print("now at",imgp)
+    try :
+        craw(
+            url=asite,gender="women",
+            imgfile=imgp,
+            feature="test",
+            datapath=datapath
+            )
+    except:
+        print(f"fail in {imgp}")
+print(1)
+sys.exit()
 
     

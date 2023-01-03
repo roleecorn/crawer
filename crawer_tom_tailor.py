@@ -1,4 +1,6 @@
 
+from test1 import t
+from selenium.webdriver.common.action_chains import ActionChains
 from classes.findpath import find_path
 from selenium import webdriver
 import time
@@ -9,7 +11,7 @@ from classes.cloth import cloth
 import urllib.request
 import json
 myhome = Path.cwd()
-from selenium.webdriver.common.action_chains import ActionChains
+
 
 def craw(url: str, gender: str, imgfile: list, feature: str, datapath: Path):
     print('執行開始')
@@ -91,7 +93,7 @@ def craw(url: str, gender: str, imgfile: list, feature: str, datapath: Path):
 
     driver1.close()
 
-from test1 import t
+
 url = "https://www.tom-tailor.eu/men/clothing/shirts"
 print('執行開始')
 dpath = myhome / 'chromedriver'
